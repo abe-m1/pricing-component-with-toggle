@@ -19,6 +19,7 @@ $veryLightGrayishBlue: hsl(240, 78%, 98%);
 $lightGrayishBlue: hsl(234, 14%, 74%);
 $grayishBlue: hsl(233, 13%, 49%);
 $darkGrayishBlue: hsl(232, 13%, 33%);
+$white: #fff;
 
 //mixins
 @mixin respond($breakpoint) {
@@ -62,6 +63,211 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  background-color: $veryLightGrayishBlue;
+  height: 100vh;
+  background: url(/images/bg-bottom.svg) no-repeat bottom left,
+    url(/images/bg-top.svg) no-repeat top right;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  padding-top: 7.5rem;
+}
+
+.headline {
+  font-size: 3.4rem;
+  margin-bottom: 4rem;
+  color: $grayishBlue;
+}
+
+.toggle-container {
+  margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+}
+.annually {
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  color: $lightGrayishBlue;
+}
+.monthly {
+  margin-left: 3rem;
+  font-size: 1.5rem;
+  color: $lightGrayishBlue;
+}
+
+//slider
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.row {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.box {
+  width: 30%;
+  // background-color: red;
+  padding: 3rem 2.5rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  border-radius: 10px;
+  text-align: center;
+
+  &:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &:nth-child(3) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+  }
+}
+
+.side-box {
+  background-color: $white;
+}
+.center-box {
+  color: $white;
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+}
+
+.type {
+  font-size: 1.7rem;
+  margin-bottom: 2.6rem;
+}
+
+.price {
+  font-size: 7rem;
+  margin-bottom: 2rem;
+}
+
+.specs li {
+  &:first-child {
+    border-top: 1px solid $veryLightGrayishBlue;
+    border-bottom: 1px solid $veryLightGrayishBlue;
+  }
+
+  &:last-child {
+    margin-bottom: 3rem;
+  }
+  font-size: 1.5rem;
+  border-bottom: 1px solid $veryLightGrayishBlue;
+  padding: 1.7rem 0;
+  list-style: none;
+}
+
+.button {
+  width: 100%;
+  padding: 1.4rem 2rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.button-center {
+  background-color: $white;
+  color: $grayishBlue;
+}
+
+.button-side {
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  color: $white;
 }
 .attribution {
   font-size: 11px;
