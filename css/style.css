@@ -233,6 +233,9 @@ input:checked + .slider:before {
 .attribution {
   font-size: 11px;
   text-align: center; }
+  @media (max-width: 600px) {
+    .attribution {
+      display: none; } }
 
 .attribution a {
   color: #3e52a3; }

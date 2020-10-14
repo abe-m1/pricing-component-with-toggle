@@ -334,6 +334,9 @@ input:checked + .slider:before {
 .attribution {
   font-size: 11px;
   text-align: center;
+  @include respond(phone) {
+    display: none;
+  }
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
