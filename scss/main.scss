@@ -202,7 +202,7 @@ input:checked + .slider:before {
   flex-direction: column;
   // justify-content: center;
   // align-items: center;
-  border-radius: 10px;
+  border-radius: 1rem;
   text-align: center;
 
   &:nth-child(1) {
@@ -219,17 +219,17 @@ input:checked + .slider:before {
     width: 100%;
     margin: auto;
     margin-bottom: 3rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     padding: 4.1rem 2.5rem;
 
     &:nth-child(1) {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
     }
 
     &:nth-child(3) {
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
     }
   }
 }
@@ -299,7 +299,7 @@ input:checked + .slider:before {
 .button {
   width: 100%;
   padding: 1.6rem 2rem 1.2rem 2rem;
-  border-radius: 10px;
+  border-radius: 1rem;
   border: none;
   font-size: 1.5rem;
   text-transform: uppercase;
